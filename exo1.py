@@ -22,14 +22,13 @@ Prompts EXACTS a utiliser :
 5) "Entrez la duree moyenne d'un match de soccer suivi (en minutes) : "
 """
 
-# TODO: Lire le nom (str)
-nom_comp = input("Entrez votre nom complet : ")
-# TODO: Lire les 4 valeurs (int)
-# TODO: Valider les donnees (matchs >= 0, durees > 0)
+
 matchs_foot = -1
 duree_foot = 0
 matchs_soccer = -1
 duree_soccer = 0
+
+nom_comp = input("Entrez votre nom complet : ")
 
 while matchs_foot < 0:
     try:
@@ -59,13 +58,10 @@ while duree_soccer <= 0:
     except ValueError:
         print("Erreur - donnees invalides.")
 
-
-# TODO: Calculer les minutes totales (football, soccer, total)
 mins_total_foot = matchs_foot * duree_foot
 mins_total_soccer = matchs_soccer * duree_soccer
 mins_total = mins_total_foot + mins_total_soccer
 
-# TODO: Convertir en heures/minutes et afficher exactement 4 lignes
 heures_foot = mins_total_foot // 60
 minutes_foot = mins_total_foot % 60
 heures_soccer = mins_total_soccer // 60
