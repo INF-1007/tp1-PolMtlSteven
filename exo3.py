@@ -38,30 +38,30 @@ mins_controle_entree = -1
 
 
 while distance < 0.0 or mins_attente_navette < 0.0 or mins_trajet_metro < 0.0 or mins_controle_entree < 0.0: # Boucler tant qu'il y des valeurs invalides
-                if distance < 0: # Lire donnée seulement si elle est invalide   
-                    try:
-                        distance = float(input("Entrez la distance jusqu'au CEPSUM (en kilometres) : "))
-                        print("Erreur - donnees invalides.") if distance < 0 else None
-                    except ValueError:
-                        print("Erreur - donnees invalides.")
-                elif mins_attente_navette < 0:
-                    try:
-                        mins_attente_navette = float(input("Entrez le temps d'attente de la navette (en minutes) : "))
-                        print("Erreur - donnees invalides.") if mins_attente_navette < 0 else None
-                    except ValueError:
-                        print("Erreur - donnees invalides.")
-                elif mins_trajet_metro < 0:
-                    try:
-                        mins_trajet_metro = float(input("Entrez le temps du trajet en metro (en minutes) : "))
-                        print("Erreur - donnees invalides.") if mins_trajet_metro < 0 else None
-                    except ValueError:
-                        print("Erreur - donnees invalides.")
-                elif mins_controle_entree < 0:
-                    try:
-                        mins_controle_entree = float(input("Entrez le temps de controle a l'entree (en minutes) : "))
-                        print("Erreur - donnees invalides.") if mins_controle_entree < 0 else None
-                    except ValueError:
-                        print("Erreur - donnees invalides.")
+    if distance < 0: # Lire donnée seulement si elle est invalide   
+        try:
+            distance = float(input("Entrez la distance jusqu'au CEPSUM (en kilometres) : "))
+            print("Erreur - donnees invalides.") if distance < 0 else None
+        except ValueError:
+            print("Erreur - donnees invalides.")
+    elif mins_attente_navette < 0:
+        try:
+            mins_attente_navette = float(input("Entrez le temps d'attente de la navette (en minutes) : "))
+            print("Erreur - donnees invalides.") if mins_attente_navette < 0 else None
+        except ValueError:
+            print("Erreur - donnees invalides.")
+    elif mins_trajet_metro < 0:
+        try:
+            mins_trajet_metro = float(input("Entrez le temps du trajet en metro (en minutes) : "))
+            print("Erreur - donnees invalides.") if mins_trajet_metro < 0 else None
+        except ValueError:
+            print("Erreur - donnees invalides.")
+    elif mins_controle_entree < 0:
+        try:
+            mins_controle_entree = float(input("Entrez le temps de controle a l'entree (en minutes) : "))
+            print("Erreur - donnees invalides.") if mins_controle_entree < 0 else None
+        except ValueError:
+            print("Erreur - donnees invalides.")
 
 # TODO: Validation
 
