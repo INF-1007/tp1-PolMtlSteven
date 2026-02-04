@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 # Exercice 01 - Bilan de visionnage Carabins (gabarit)
+# Fait par Steven Emeu
+
 """
 Objectif :
 - DEMANDER : nom complet, matchs football, duree football, matchs soccer, duree soccer

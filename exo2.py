@@ -1,4 +1,5 @@
 # Exercice 02 – Ambiance autour du stade (sections A a H) (gabarit)
+# Fait par Steven Emeu
 """
 Objectif :
 - Lire 8 entiers (un par ligne) : personnes dans les sections A, B, C, D, E, F, G, H (dans cet ordre)
