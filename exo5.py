@@ -35,10 +35,50 @@ Conseil :
 - Une solution simple consiste a tester plusieurs combinaisons de forfaits avec des boucles (bruteforce).
 """
 
+nb_billets = -1
+statut_etudiant = "X"
+
 # TODO: Lire n (int) et statut (str)
+while nb_billets < 0 or statut_etudiant not in {"O", "N"}:
+    if nb_billets < 0: # On demande la lecture seulement si nb_billets est négatif
+        try:
+            nb_billets = int(input(f"Entrez le nombre de billets necessaires : "))
+            print("Erreur - donnees invalides.") if nb_billets < 0 else None
+        except ValueError:
+            print("Erreur - donnees invalides.")
+    # TODO: Code pour lire et vérifier le statut étudiant
 
-# TODO: Validation (n >= 0 et statut dans {O, N})
+prix = 0
+reste_billets = nb_billets
+combinaison = {
+    "forfait_24": 0,
+    "forfait_12": 0,
+    "forfait_5": 0,
+    "forfait_unit.": 0
+}
 
-# TODO: Chercher la meilleure combinaison (A, B, C, D)
+if reste_billets / 24 > 0:
+    prix += 66 * (reste_billets / 24) * 0.88 if statut_etudiant == "O" else 66 * (reste_billets / 24)
+    combinaison["forfait_24"] = reste_billets / 24
+    reste_billets %= 24
 
+if reste_billets / 12 > 0:
+    prix += 36 * (reste_billets / 12) * 0.88 if statut_etudiant == "O" else 36 * (reste_billets / 12)
+    combinaison["forfait_12"] = reste_billets / 12
+    reste_billets %= 12
+
+ # TODO Ajouter logique pour forfait de 5 billets
+ # TODO Ajouter logique pour billet unitaire
+            
+
+
+  
 # TODO: Calculer et afficher le resultat exact (6 lignes)
+somme = sum(prix for prix in combinaison.values()) 
+
+print(f"Forfaits de 24 billets - {combinaison['forfait_24']}")
+print(f"Forfaits de 12 billets - {combinaison['forfait_12']}")
+print(f"Forfaits de 5 billets - C")
+print(f"Billets unitaires - D")
+print(f"Total billets - T")
+print(f"Prix total - {somme:2f}")
