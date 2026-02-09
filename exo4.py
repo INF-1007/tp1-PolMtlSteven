@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 # Exercice 04 - Verification d'une rampe d'accessibilite (gabarit)
+# Fait par Nancy
 """
 Objectif :
 - DEMANDER : hauteur (cm, float) et longueur (m, float)
@@ -26,11 +27,27 @@ Prompts EXACTS :
 """
 
 # TODO: Importer math
-
+import math
 # TODO: Lire hauteur_cm et longueur_m
+hauteur_cm=float(input("Entrez la hauteur a franchir (en centimetres) : "))
+longueur_m=float(input("Entrez la longueur horizontale (en metres) : "))
 
 # TODO: Validation
-
+if hauteur_cm < 0 or longueur_m <= 0:
+    print("Erreur - donnees invalides.")
 # TODO: Calcul pente et angle
+hauteur_m=hauteur_cm/100
+pente=(hauteur_m/longueur_m)*100
+angle_rad=math.atan(hauteur_m/longueur_m)
+angle_deg=math.degrees(angle_rad)
+
+conforme=pente <=8.00
 
 # TODO: Affichage exact (+ ligne depassement si necessaire)
+print(f"Pente: {pente:.2f}%")
+print(f"Angle: {angle_deg::.2f}")
+print(f"Conforme: {'OUI' if pente <=8.00 else 'NON'}")
+
+if not conforme: 
+    depassement=pente-8.00
+    print(f"Depassement: {depassement:.2f}%")
